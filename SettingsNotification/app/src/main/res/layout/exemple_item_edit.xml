@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginBottom="5dp"
+app:cardCornerRadius="4dp"
+    android:background="@color/colorButton">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTopMenu">
+
+        <TextView
+            android:id="@+id/tvLine3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="Line 1"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etLine4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="50dp"
+            android:background="@null"
+            android:cursorVisible="true"
+            android:inputType="number"
+            android:textAlignment="textEnd"
+            android:textColor="#ffffff"
+            android:textColorHighlight="#9c9c9c"
+            android:textColorHint="#9c9c9c"
+            android:textColorLink="#FFFFFF"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLine1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvLine3"
+            app:layout_constraintTop_toTopOf="@+id/tvLine1">
+
+        </EditText>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

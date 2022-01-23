@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity"
+    android:background="@color/colorBackground"
+    >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Schimbă tipul notificărilor"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rgNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RadioButton
+            android:id="@+id/rbDaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="changeNotificationSetting"
+            android:text="Zilnic"
+            android:textColor="@color/colorWhite" />
+
+        <RadioButton
+            android:id="@+id/rbWeekly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="changeNotificationSetting"
+            android:text="Săptămânal"
+            android:textColor="@color/colorWhite" />
+
+        <RadioButton
+            android:id="@+id/rbNever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="changeNotificationSetting"
+            android:text="Niciodată"
+            android:textColor="@color/colorWhite" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Înregistrează un nou obiect"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/rgNotification" />
+
+    <EditText
+        android:id="@+id/etSettingItemName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Denumire"
+        android:inputType="textPersonName"
+        android:textColor="#ffffff"
+        android:textColorHighlight="#9c9c9c"
+        android:textColorHint="#9c9c9c"
+        android:textColorLink="#FFFFFF"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/etSettingsItemCost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Valoare (lei)"
+        android:inputType="numberSigned|numberDecimal"
+        android:textColor="#ffffff"
+        android:textColorHighlight="#9c9c9c"
+        android:textColorHint="#9c9c9c"
+        android:textColorLink="#FFFFFF"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintEnd_toEndOf="@+id/etSettingItemName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/etSettingItemName"
+        app:layout_constraintTop_toBottomOf="@+id/etSettingItemName" />
+
+    <Button
+        android:id="@+id/bSettingsSaveNewItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorButton"
+        android:text="Adaugă"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/etSettingsItemCost" />
+
+
+    <Button
+        android:id="@+id/bSettingsChangePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@color/colorButton"
+        android:text="Schimbă"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toEndOf="@+id/bSettingsSaveNewItem"
+        app:layout_constraintTop_toTopOf="@+id/bSettingsSaveNewItem" />
+
+    <Button
+        android:id="@+id/bSettingsDeleteItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@color/colorButton"
+        android:text="Șterge"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toEndOf="@+id/bSettingsChangePrice"
+        app:layout_constraintTop_toTopOf="@+id/bSettingsSaveNewItem" />
+
+    <TextView
+        android:id="@+id/listaObiecteDejaCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Obiecte adăugate până acum"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/bSettingsSaveNewItem" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEdit7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaObiecteDejaCreate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
